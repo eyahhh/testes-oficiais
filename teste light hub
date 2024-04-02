@@ -9,7 +9,7 @@ Tab1:AddButton({
 	Name = "autoclick",
 	Callback = function()
       		print("button pressed")
-if autoclick == true then 
+if value == true then 
 loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
   	end    
 })
