@@ -1,18 +1,18 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Testing it", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
 local Tab = Window:MakeTab({
-	Name = "LIGHTZ",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Name = "LIGHTZ",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
 })
 Tab:AddButton({
-	Name = "autoclick",
-	Callback = function()
-      		print("button pressed")
-if value == true then 
-loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
-  	end    
+    Name = "autoclick",
+    Callback = function()
+        print("button pressed")
+        -- Verifique se 'value' está definido e tem um valor atribuído
+        if value == true then 
+            loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+        end
     end
 })
 OrionLib:Init()
-
