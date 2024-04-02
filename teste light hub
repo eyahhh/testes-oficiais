@@ -11,7 +11,7 @@ Tabe:AddButton({
         print("button pressed")
         -- Verifique se 'value' está definido e tem um valor atribuído
         if switch == true then 
-            loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+        print("você ativou o autoclick")
         end
     end
 })
