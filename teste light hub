@@ -1,5 +1,5 @@
 while true do
-    wait(-1)  -- Tempo de espera mínimo, o loop será executado o mais rápido possível
+    wait(0.001)  -- Tempo de espera mínimo, o loop será executado o mais rápido possível
 
     local args = {
         [1] = 0,
