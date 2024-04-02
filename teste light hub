@@ -1,5 +1,5 @@
 while true do
-    wait(0.000001)
+    wait(0.001)  -- Tempo de espera de 0.001 segundos (1 milissegundo)
 
     local args = {
         [1] = 0,
