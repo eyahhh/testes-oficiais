@@ -5,7 +5,7 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "autoclick",
 	Callback = function()
       		print("button pressed")
