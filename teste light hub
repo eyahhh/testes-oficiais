@@ -12,7 +12,7 @@ IntroIcon = <string> - URL to the image you want to use in the intro animation.
 Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]local Tab = Window:MakeTab({
-	Name = "Tab 1",
+	Name = "autoclicker",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -29,3 +29,19 @@ local Section = Tab:AddSection({
 --[[
 Name = <string> - Autoclick.
 ]]
+Tab:AddButton({
+	Name = "Button!",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - Ativar autoclick.
+Callback = <function> - The function of the button.
+]]
+
+if Ativar autoclick == true then 
+loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+end
+
