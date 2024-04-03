@@ -17,7 +17,7 @@ Duration = 5; -- how long the notification should in secounds
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
 local Window = Library:NewWindow(" Lightz HUB")
-local Section = Window:NewSection("Made by SumitScripts")
+local Section = Window:NewSection("Made by Light Zacarias")
 
 Section:CreateToggle("Auto Parry V1", function(value)
 getgenv().config = getgenv().config or {
