@@ -3,48 +3,48 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Lightz HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
 
 local ParryTab = Window:MakeTab({
-	Name = "Parry Ball",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Name = "Parry Ball",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
 })
+
 wait(1.9)
+
 OrionLib:MakeNotification({
-	Name = "Script executado!",
-	Content = "pode continuar usando o light HUB!",
-	Image = "rbxassetid://4483345998",
-	Time = 10
+    Name = "Script executado!",
+    Content = "pode continuar usando o light HUB!",
+    Image = "rbxassetid://4483345998",
+    Time = 10
 })  
 
 ParryTab:AddButton({
-	Name = "Auto Parry (not too good)",
-	Callback = function()
-      		print("button pressed")
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
-  	end    
-})
-ParryTab:AddButton({
-	Name = "Op Auto Spam",
-	Callback = function()
-      		print("button pressed")
-      		
-    loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
-  	end    
+    Name = "Auto Parry (not too good)",
+    Callback = function()
+        print("button pressed")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+    end    
 })
 
 ParryTab:AddButton({
-	Name = "Op Auto Parry",
-	Callback = function()
-      		print("button pressed")
-      	loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
-	end
-  	
-  	local ShopTab = Window:MakeTab({
-	Name = "Shop ",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-}) ShopTab:AddLabel("em densevolvimento!")
+    Name = "Op Auto Spam",
+    Callback = function()
+        print("button pressed")
+        loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
+    end    
+})
 
-end
+ParryTab:AddButton({
+    Name = "Op Auto Parry",
+    Callback = function()
+        print("button pressed")
+        loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
+    end
+})
 
+local ShopTab = Window:MakeTab({
+    Name = "Shop",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}) 
 
-
+ShopTab:AddLabel("em desenvolvimento!")
