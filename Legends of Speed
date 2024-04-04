@@ -1,37 +1,37 @@
-while true do
-wait(0.001)
-local args = {
-    [1] = "collectOrb",
-    [2] = "Red Orb",
-    [3] = "City"
-}
--------------------------------------
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local args = {
-    [1] = "collectOrb",
-    [2] = "Yellow Orb",
-    [3] = "City"
-}
--------------------------------------
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
+local Window = OrionLib:MakeWindow({Name = "Lightz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "lightSave"})
 
-end
+local FarmTab = Window:MakeTab({
+    Name = "AutoFarm ",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-local args = {
-    [1] = "collectOrb",
-    [2] = "Blue Orb",
-    [3] = "City"
-}
--------------------------------------
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
+wait(6)
+OrionLib:MakeNotification({
+    Name = "SCRIPT LOADED",
+    Content = "script carregado!",
+    Image = "rbxassetid://4483345998",
+    Time = 12
+})
 
+FarmTab:AddToggle({
+    Name = "Yellow Orb",
+    Default = false,
+    Callback = function(Value)
+        print(Value)
 
-local args = {
-    [1] = "collectOrb",
-    [2] = "Orange Orb",
-    [3] = "City"
-}
+        local args = {
+            [1] = "collectOrb",
+            [2] = "Yellow Orb",
+            [3] = "City"
+        }
 
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
-e
+        if Value then
+            game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
+        else
+            -- Aqui você pode adicionar o que deseja fazer quando o toggle estiver desativado.
+        end
+    end
+})
