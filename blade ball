@@ -37,7 +37,7 @@ ParryTab:AddButton({
     Name = "Op Auto Parry",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2",true))()
     end
 })
 
@@ -47,12 +47,28 @@ local ShopTab = Window:MakeTab({
     PremiumOnly = false
 }) 
 
-ShopTab:AddLabel("em desenvolvimento!")
+
 
 ParryTab:AddButton({
-    Name = "FPS boost (not too good)",
+    Name = "FPS boost",
     Callback = function()
         print("button pressed")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/blade%20ball",true))()
     end    
+})
+
+ShopTab:AddButton({
+    Name = "Normal Sword Box",
+    Callback = function()
+        print("button pressed")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box",true))()
+    end
+})
+
+ShopTab:AddButton({
+    Name = "Normal Explosion Box",
+    Callback = function()
+        print("button pressed")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box",true))()
+    end
 })
