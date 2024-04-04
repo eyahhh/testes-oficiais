@@ -1,0 +1,6 @@
+local args = {
+    [1] = "PromptPurchaseCrate",
+    [2] = workspace:WaitForChild("Spawn"):WaitForChild("Crates"):WaitForChild("NormalExplosionCrate")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
