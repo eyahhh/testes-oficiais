@@ -23,7 +23,11 @@ ParryTab:AddButton({
         print("button pressed")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
     end    
-})
+
+
+
+
+
 
 ParryTab:AddButton({
     Name = "Op Auto Spam",
@@ -77,4 +81,26 @@ ShopTab:AddButton({
         print("button pressed")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box",true))()
     end
+})
+
+
+ParryTab:AddButton({
+    Name = "Esp Players",
+    Callback = function()
+        print("button pressed")
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/PinkEsp/main/MainEsp"))();
+    end    
+
+})
+
+ParryTab:AddLabel("ban risc!")
+
+
+ParryTab:AddButton({
+    Name = "auto win",
+    Callback = function()
+        print("button pressed")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/auto%20win",true))()
+    end    
+
 })
