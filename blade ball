@@ -32,7 +32,7 @@ ParryTab:AddButton({
     Name = "Hold Block to spam",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam"))()
     end
 })
 
@@ -40,7 +40,7 @@ ParryTab:AddButton({
     Name = "Op Auto Parry",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2"))()
     end
 })
 
@@ -54,7 +54,7 @@ ShopTab:AddButton({
     Name = "Normal Sword Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
     end
 })
 
@@ -62,7 +62,7 @@ ShopTab:AddButton({
     Name = "Normal Explosion Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
     end
 })
 
@@ -70,7 +70,7 @@ ParryTab:AddButton({
     Name = "Esp Players",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/PinkEsp/main/MainEsp", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/PinkEsp/main/MainEsp"))()
     end
 })
 
@@ -78,7 +78,7 @@ ParryTab:AddButton({
     Name = "auto win",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/auto%20win", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/auto%20win"))()
     end
 })
 
@@ -87,7 +87,7 @@ ShopTab:AddButton({
     Name = "Premium Explosion Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag"))()
     end
 })
 
@@ -95,7 +95,7 @@ ShopTab:AddButton({
     Name = "Premium Sword Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box"))()
     end
 })
 
@@ -109,6 +109,6 @@ ConfigTab:AddButton({
     Name = "Fps boost",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster"))()
     end
 })
