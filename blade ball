@@ -1,5 +1,7 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
-local Window = OrionLib:MakeWindow({Name = "Lightz HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
+local Window = OrionLib:MakeWindow({Name = "Lightz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
+
+
 local ParryTab = Window:MakeTab({Name = "Parry Ball", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
 wait(1.9)
@@ -98,5 +100,19 @@ ShopTab:AddButton({
         print("button pressed")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box,true))()
     end
+
+local ConfigTab = Window:MakeTab({
+	Name = "Configs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+ParryTab:AddButton({
+    Name = "Fps boost",
+    Callback = function()
+        print("button pressed")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster"))()
+    end
+})
 
 
