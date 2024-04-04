@@ -5,7 +5,7 @@ local args = {
     [2] = "Red Orb",
     [3] = "City"
 }
-
+-------------------------------------
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
 
 local args = {
@@ -13,7 +13,7 @@ local args = {
     [2] = "Yellow Orb",
     [3] = "City"
 }
-
+-------------------------------------
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
 
 end
@@ -23,7 +23,7 @@ local args = {
     [2] = "Blue Orb",
     [3] = "City"
 }
-
+-------------------------------------
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
 
 
