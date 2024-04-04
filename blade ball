@@ -1,18 +1,12 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 local Window = OrionLib:MakeWindow({Name = "Lightz HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
-
-local ParryTab = Window:MakeTab({
-    Name = "Parry Ball",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
+local ParryTab = Window:MakeTab({Name = "Parry Ball", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
 wait(1.9)
 
 OrionLib:MakeNotification({
     Name = "Script executado!",
-    Content = "pode continuar usando o light HUB!",
+    Content = "Você pode continuar usando o Light HUB!",
     Image = "rbxassetid://4483345998",
     Time = 10
 })
@@ -21,7 +15,7 @@ ParryTab:AddButton({
     Name = "Auto Parry (not too good)",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0"))()
     end
 })
 
@@ -37,7 +31,7 @@ ParryTab:AddButton({
     Name = "Hold Block to spam",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam"))()
     end
 })
 
@@ -45,7 +39,7 @@ ParryTab:AddButton({
     Name = "Op Auto Parry",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2"))()
     end
 })
 
@@ -59,7 +53,7 @@ ShopTab:AddButton({
     Name = "Normal Sword Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
     end
 })
 
@@ -67,7 +61,7 @@ ShopTab:AddButton({
     Name = "Normal Explosion Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
     end
 })
 
@@ -79,12 +73,10 @@ ParryTab:AddButton({
     end
 })
 
-ParryTab:AddLabel("ban risc!")
-
 ParryTab:AddButton({
     Name = "auto win",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/auto%20win",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/auto%20win"))()
     end
 })
