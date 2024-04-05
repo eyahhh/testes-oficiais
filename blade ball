@@ -1,32 +1,102 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source.lua'))()
-local Window = OrionLib.MakeWindow({Name = "Lightz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
+local Window = OrionLib:MakeWindow({Name = "Lightz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
 
-local ParryTab = Window.MakeTab({Name = "Parry Ball", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+local function LoadScript(url, scriptName)
+    local success, script = pcall(game.HttpGet, game, url)
+    if success then
+        local success, err = pcall(loadstring(script))
+        if not success then
+            warn("Failed to execute script '".. scriptName .."':", err)
+        else
+            print("Script '".. scriptName .."' executed successfully.")
+        end
+    else
+        warn("Failed to load script '".. scriptName .."':", script)
+    end
+end
 
+local ParryTab = Window:MakeTab({Name = "Parry Ball", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 wait(1.9)
 
-OrionLib.MakeNotification({
+OrionLib:MakeNotification({
     Name = "Script executado!",
     Content = "Você pode continuar usando o Light HUB!",
     Image = "rbxassetid://4483345998",
     Time = 10
 })
 
-local function AddButton(tab, name, callback)
-    tab:AddButton({
-        Name = name,
-        Callback = function()
-            print("button pressed")
-            loadstring(game:HttpGet(callback))()
-        end
-    })
-end
+ParryTab:AddButton({
+    Name = "Auto Parry",
+    Callback = function()
+        LoadScript("https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua", "Auto Parry")
+    end
+})
 
-AddButton(ParryTab, "Auto Parry", "https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua")
-AddButton(ParryTab, "Op Auto Spam", "https://pastebin.com/raw/t2391h1A")
-AddButton(ParryTab, "Hold Block to spam", "https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam")
-AddButton(ParryTab, "Op Auto Parry", "https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2")
+ParryTab:AddButton({
+    Name = "Op Auto Spam",
+    Callback = function()
+        LoadScript("https://pastebin.com/raw/t2391h1A", "Op Auto Spam")
+    end
+})
 
-local ShopTab = Window.MakeTab({
+ParryTab:AddButton({
+    Name = "Hold Block to spam",
+    Callback = function()
+        LoadScript("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam", "Hold Block to spam")
+    end
+})
+
+ParryTab:AddButton({
+    Name = "Op Auto Parry",
+    Callback = function()
+        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2", "Op Auto Parry")
+    end
+})
+
+local ShopTab = Window:MakeTab({
     Name = "Shop",
-    Icon = "rbxassetid://4483
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+ShopTab:AddButton({
+    Name = "Normal Sword Box",
+    Callback = function()
+        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box", "Normal Sword Box")
+    end
+})
+
+ShopTab:AddButton({
+    Name = "Normal Explosion Box",
+    Callback = function()
+        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box", "Normal Explosion Box")
+    end
+})
+
+ShopTab:AddLabel("Premium Crates")
+ShopTab:AddButton({
+    Name = "Premium Explosion Box",
+    Callback = function()
+        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag", "Premium Explosion Box")
+    end
+})
+
+ShopTab:AddButton({
+    Name = "Premium Sword Box",
+    Callback = function()
+        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box", "Premium Sword Box")
+    end
+})
+
+local ConfigTab = Window:MakeTab({
+    Name = "Configs",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+ConfigTab:AddButton({
+    Name = "Fps boost",
+    Callback = function()
+        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster", "FPS Boost")
+    end
+})
