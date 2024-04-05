@@ -45,61 +45,62 @@ Rayfield:Notify({
    },
 })
 
-
-local Button2 = Tab:CreateButton({
+local Button1 = Tab:CreateButton({
    Name = "Auto Parry Op",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2"))()
    end,
    Discord = {
       Enabled = true,
-      Invite = "xRBvtwHB", -- Discord invite code for the button, if different from the main window Discord invite
-      RememberJoins = true -- Whether or not to remember joins for the button's Discord invite
+      Invite = "xRBvtwHB",
+      RememberJoins = true
    }
 })
-
 
 local Button2 = Tab:CreateButton({
    Name = "Auto Spam Op",
    Callback = function()
       loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
    end
+})
 
-local Button2 = Tab:CreateButton({
+local Button3 = Tab:CreateButton({
    Name = "Hold Block Spam",
    Callback = function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam"))()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam"))()
    end
+})
 
+local ShopTab = Window:CreateTab("Shop", 4483362458)
 
-local ShopTab = Window:CreateTab("Combat", 4483362458)
+local Label1 = ShopTab:CreateLabel("Normal Boxes")
 
-local Label = shopTab:CreateLabel(Normal Boxes")
-
-local Button3 = Tab:CreateButton({
-   Name = "Normal sword Box",
+local Button4 = ShopTab:CreateButton({
+   Name = "Normal Sword Box",
    Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
    end
+})
 
-local Button3 = Tab:CreateButton({
+local Button5 = ShopTab:CreateButton({
    Name = "Normal Explosion Box",
    Callback = function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
    end
+})
 
-local Label = shopTab:CreateLabel(Premium Boxes")
+local Label2 = ShopTab:CreateLabel("Premium Boxes")
 
-local Button3 = Tab:CreateButton({
+local Button6 = ShopTab:CreateButton({
    Name = "Premium Explosion Box",
    Callback = function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag"))(
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag"))()
    end
+})
 
-local Button3 = Tab:CreateButton({
+local Button7 = ShopTab:CreateButton({
    Name = "Premium Sword Box",
    Callback = function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box"))()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box"))()
    end
-
-
+})
