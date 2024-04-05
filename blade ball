@@ -1,6 +1,15 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source.lua'))()
 local Window = OrionLib:MakeWindow({Name = "Lightz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
 
+local function ExecuteScript(scriptUrl)
+    local success, script = pcall(function()
+        return loadstring(game:HttpGet(scriptUrl))()
+    end)
+    if not success then
+        warn("Erro ao executar o script:", scriptUrl)
+    end
+end
+
 local ParryTab = Window:MakeTab({Name = "Parry Ball", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
 wait(1.9)
@@ -16,7 +25,7 @@ ParryTab:AddButton({
     Name = "Auto Parry",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua"))()
+        ExecuteScript("https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua")
     end
 })
 
@@ -24,7 +33,7 @@ ParryTab:AddButton({
     Name = "Op Auto Spam",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
+        ExecuteScript("https://pastebin.com/raw/t2391h1A")
     end
 })
 
@@ -32,7 +41,7 @@ ParryTab:AddButton({
     Name = "Hold Block to spam",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam"))()
+        ExecuteScript("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam")
     end
 })
 
@@ -40,7 +49,7 @@ ParryTab:AddButton({
     Name = "Op Auto Parry",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2"))()
+        ExecuteScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2")
     end
 })
 
@@ -54,7 +63,7 @@ ShopTab:AddButton({
     Name = "Normal Sword Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
+        ExecuteScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box")
     end
 })
 
@@ -62,7 +71,7 @@ ShopTab:AddButton({
     Name = "Normal Explosion Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
+        ExecuteScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box")
     end
 })
 
@@ -70,7 +79,7 @@ ParryTab:AddButton({
     Name = "Esp Players",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Neoncat765/PinkEsp/main/MainEsp"))()
+        ExecuteScript("https://raw.githubusercontent.com/Neoncat765/PinkEsp/main/MainEsp")
     end
 })
 
@@ -78,7 +87,7 @@ ParryTab:AddButton({
     Name = "auto win",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/auto%20win"))()
+        ExecuteScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/auto%20win")
     end
 })
 
@@ -87,7 +96,7 @@ ShopTab:AddButton({
     Name = "Premium Explosion Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag"))()
+        ExecuteScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag")
     end
 })
 
@@ -95,7 +104,7 @@ ShopTab:AddButton({
     Name = "Premium Sword Box",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box"))()
+        ExecuteScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box")
     end
 })
 
@@ -109,6 +118,6 @@ ConfigTab:AddButton({
     Name = "Fps boost",
     Callback = function()
         print("button pressed")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster"))()
+        ExecuteScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster")
     end
 })
