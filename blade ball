@@ -1,26 +1,14 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source.lua'))()
 local Window = OrionLib:MakeWindow({Name = "Lightz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
 
-local function LoadScript(url, scriptName)
-    local success, script = pcall(game.HttpGet, game, url)
-    if success then
-        local success, err = pcall(loadstring(script))
-        if not success then
-            warn("Failed to execute script '".. scriptName .."':", err)
-        else
-            print("Script '".. scriptName .."' executed successfully.")
-        end
-    else
-        warn("Failed to load script '".. scriptName .."':", script)
-    end
-end
 
 local ParryTab = Window:MakeTab({Name = "Parry Ball", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+
 wait(1.9)
 
 OrionLib:MakeNotification({
     Name = "Script executado!",
-    Content = "Você pode continuar usando o Light HUB!",
+    Content = "Você pode continuar usando o Lightz Hub!",
     Image = "rbxassetid://4483345998",
     Time = 10
 })
@@ -28,28 +16,28 @@ OrionLib:MakeNotification({
 ParryTab:AddButton({
     Name = "Auto Parry",
     Callback = function()
-        LoadScript("https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua", "Auto Parry")
+        Loadstring("https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua")
     end
 })
 
 ParryTab:AddButton({
     Name = "Op Auto Spam",
     Callback = function()
-        LoadScript("https://pastebin.com/raw/t2391h1A", "Op Auto Spam")
+        Loadstring("https://pastebin.com/raw/t2391h1A")
     end
 })
 
 ParryTab:AddButton({
     Name = "Hold Block to spam",
     Callback = function()
-        LoadScript("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam", "Hold Block to spam")
+        Loadstring("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam")
     end
 })
 
 ParryTab:AddButton({
     Name = "Op Auto Parry",
     Callback = function()
-        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2", "Op Auto Parry")
+        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2")
     end
 })
 
@@ -62,14 +50,14 @@ local ShopTab = Window:MakeTab({
 ShopTab:AddButton({
     Name = "Normal Sword Box",
     Callback = function()
-        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box", "Normal Sword Box")
+        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box")
     end
 })
 
 ShopTab:AddButton({
     Name = "Normal Explosion Box",
     Callback = function()
-        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box", "Normal Explosion Box")
+        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box")
     end
 })
 
@@ -77,14 +65,14 @@ ShopTab:AddLabel("Premium Crates")
 ShopTab:AddButton({
     Name = "Premium Explosion Box",
     Callback = function()
-        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag", "Premium Explosion Box")
+        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag")
     end
 })
 
 ShopTab:AddButton({
     Name = "Premium Sword Box",
     Callback = function()
-        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box", "Premium Sword Box")
+        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box")
     end
 })
 
@@ -97,6 +85,6 @@ local ConfigTab = Window:MakeTab({
 ConfigTab:AddButton({
     Name = "Fps boost",
     Callback = function()
-        LoadScript("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster", "FPS Boost")
+        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster")
     end
 })
