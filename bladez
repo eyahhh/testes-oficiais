@@ -71,34 +71,34 @@ local Button3 = Tab:CreateButton({
    end
 })
 
-local ShopTab = Window:CreateTab("Shop", 4483362458)
 
-local Label1 = ShopTab:CreateLabel("Normal Boxes")
 
-local Button4 = ShopTab:CreateButton({
+local Label1 = Tab:CreateLabel("Normal Boxes")
+
+local Button4 = Tab:CreateButton({
    Name = "Normal Sword Box",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
    end
 })
 
-local Button5 = ShopTab:CreateButton({
+local Button5 = Tab:CreateButton({
    Name = "Normal Explosion Box",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
    end
 })
 
-local Label2 = ShopTab:CreateLabel("Premium Boxes")
+local Label2 = Tab:CreateLabel("Premium Boxes")
 
-local Button6 = ShopTab:CreateButton({
+local Button6 = Tab:CreateButton({
    Name = "Premium Explosion Box",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag"))()
    end
 })
 
-local Button7 = ShopTab:CreateButton({
+local Button7 = Tab:CreateButton({
    Name = "Premium Sword Box",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box"))()
