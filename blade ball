@@ -1,7 +1,6 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source.lua'))()
 local Window = OrionLib:MakeWindow({Name = "Lightz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
 
-
 local ParryTab = Window:MakeTab({Name = "Parry Ball", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
 wait(1.9)
@@ -16,28 +15,28 @@ OrionLib:MakeNotification({
 ParryTab:AddButton({
     Name = "Auto Parry",
     Callback = function()
-        Loadstring("https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua"))()
     end
 })
 
 ParryTab:AddButton({
     Name = "Op Auto Spam",
     Callback = function()
-        Loadstring("https://pastebin.com/raw/t2391h1A")
+        loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
     end
 })
 
 ParryTab:AddButton({
     Name = "Hold Block to spam",
     Callback = function()
-        Loadstring("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam"))()
     end
 })
 
 ParryTab:AddButton({
     Name = "Op Auto Parry",
     Callback = function()
-        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2"))()
     end
 })
 
@@ -50,14 +49,14 @@ local ShopTab = Window:MakeTab({
 ShopTab:AddButton({
     Name = "Normal Sword Box",
     Callback = function()
-        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
     end
 })
 
 ShopTab:AddButton({
     Name = "Normal Explosion Box",
     Callback = function()
-        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
     end
 })
 
@@ -65,14 +64,14 @@ ShopTab:AddLabel("Premium Crates")
 ShopTab:AddButton({
     Name = "Premium Explosion Box",
     Callback = function()
-        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag"))()
     end
 })
 
 ShopTab:AddButton({
     Name = "Premium Sword Box",
     Callback = function()
-        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box"))()
     end
 })
 
@@ -85,6 +84,6 @@ local ConfigTab = Window:MakeTab({
 ConfigTab:AddButton({
     Name = "Fps boost",
     Callback = function()
-        Loadstring("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster"))()
     end
 })
