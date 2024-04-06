@@ -1,89 +1,116 @@
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source.lua'))()
-local Window = OrionLib:MakeWindow({Name = "Lightz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "SaveLight"})
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local ParryTab = Window:MakeTab({Name = "Parry Ball", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-
-wait(1.9)
-
-OrionLib:MakeNotification({
-    Name = "Script executado!",
-    Content = "Você pode continuar usando o Lightz Hub!",
-    Image = "rbxassetid://4483345998",
-    Time = 10
+local Window = Rayfield:CreateWindow({
+   Name = "Lightz Hub",
+   LoadingTitle = "Lightz Hub",
+   LoadingSubtitle = "by Light",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "Lightz Hub"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "xRBvtwHB",
+      RememberJoins = true
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "please get your key!",
+      Subtitle = "Key System",
+      Note = "Get Key in https://fir3.net/AB3XV9KLrg",
+      FileName = "Key",
+      SaveKey = true,
+      GrabKeyFromSite = true,
+      Key = {"LightFN"}
+   }
 })
 
-ParryTab:AddButton({
-    Name = "Auto Parry",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SadlekAski/Scripts/main/Blade%20Ball/Ping-Based%20Parry.lua"))()
-    end
+local Tab = Window:CreateTab("Combat", 4483362458)
+
+wait(2.6)
+
+Rayfield:Notify({
+   Title = "Lightz Hub",
+   Content = "Script Carregado!",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = {
+      Ignore = {
+         Name = "Ok!",
+         Callback = function()
+            print("The user tapped Ok!")
+         end
+      },
+   },
 })
 
-ParryTab:AddButton({
-    Name = "Op Auto Spam",
-    Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
-    end
+local Button1 = Tab:CreateButton({
+   Name = "Auto Parry Op",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2"))()
+   end,
+   Discord = {
+      Enabled = true,
+      Invite = "xRBvtwHB",
+      RememberJoins = true
+   }
 })
 
-ParryTab:AddButton({
-    Name = "Hold Block to spam",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam"))()
-    end
+local Button2 = Tab:CreateButton({
+   Name = "Auto Spam Op",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
+   end
 })
 
-ParryTab:AddButton({
-    Name = "Op Auto Parry",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/AUTO%20PARRY%20V2"))()
-    end
+local Button3 = Tab:CreateButton({
+   Name = "Hold Block Spam",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam"))()
+   end
 })
 
-local ShopTab = Window:MakeTab({
-    Name = "Shop",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
+local Button3 = Tab:CreateButton({
+   Name = "Fps Booster",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster"))()
+   end
 })
 
-ShopTab:AddButton({
-    Name = "Normal Sword Box",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
-    end
+local ShopTab = Window:CreateTab("Shop", 4483362458)
+
+local Label1 = ShopTab:CreateLabel("Normal Boxes")
+
+local Button4 = ShopTab:CreateButton({
+   Name = "Normal Sword Box",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20box"))()
+   end
 })
 
-ShopTab:AddButton({
-    Name = "Normal Explosion Box",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
-    end
+local Button5 = ShopTab:CreateButton({
+   Name = "Normal Explosion Box",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20box"))()
+   end
 })
 
-ShopTab:AddLabel("Premium Crates")
-ShopTab:AddButton({
-    Name = "Premium Explosion Box",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag"))()
-    end
+local Label2 = ShopTab:CreateLabel("Premium Boxes")
+
+local Button6 = ShopTab:CreateButton({
+   Name = "Premium Explosion Box",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/explosion%20pag"))()
+   end
 })
 
-ShopTab:AddButton({
-    Name = "Premium Sword Box",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box"))()
-    end
+local Button7 = ShopTab:CreateButton({
+   Name = "Premium Sword Box",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/sword%20pag%20box"))()
+   end
 })
 
-local ConfigTab = Window:MakeTab({
-    Name = "Configs",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-ConfigTab:AddButton({
-    Name = "Fps boost",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/eyahhh/testes-oficiais/main/fps%20booster"))()
-    end
-})
+-- Tornar a janela arrastável
+Window:SetDraggable(true)
