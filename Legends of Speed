@@ -1,9 +1,11 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+if game.PlaceId == 3101667897 then
+    -- Head
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
     
     -- Notificação
     OrionLib:MakeNotification({
-	Name = "Seja bem vindo caro usuário",
-	Content = "se divirta....",
+	Name = "Lightz Hub Beta",
+	Content = "Seja bem vindo usuário ",
 	Image = "rbxassetid://4483345998",
 	Time = 5
     })
@@ -11,10 +13,10 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
     wait(5)
     
     -- Janela
-    local Window = OrionLib:MakeWindow({Name = "Lightz HUB | Legends Of Speed", HidePremium = false, IntroText = "bem vindo"})
+    local Window = OrionLib:MakeWindow({Name = "Lightz Hub | Legends Of Speed", HidePremium = false, IntroText = "Lenda⚡"})
 
     -- Variáveis
-    getgenv().AutoFarmOrb = true
+    getgenv().AutoOrb = true
     getgenv().AutoRebirth = true
     getgenv().AutoGem = true
     getgenv().AutoEgg = true
@@ -24,8 +26,8 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
     local Player = game:GetService("Players").LocalPlayer
 
     -- Funções
-    function AutoFarmOrb()
-        while getgenv().AutoFarmOrb == true do
+    function AutoOrb()
+        while getgenv().AutoOrb == true do
             game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
             game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
             game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
@@ -179,11 +181,11 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
     -- Toggles
     FarmTab:AddToggle({
-	    Name = "Auto Farm Orb",
+	    Name = "Auto Orb",
 	    Default = false,
 	    Callback = function(Value)
-		    getgenv().AutoFarmOrb = Value
-		    AutoFarmOrb()
+		    getgenv().AutoOrb = Value
+		    AutoOrb()
 	    end
     })
     
