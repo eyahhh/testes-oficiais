@@ -11,7 +11,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
     wait(5)
     
     -- Janela
-    local Window = OrionLib:MakeWindow({Name = "Lightz HUB | Legends Of Speed ()", HidePremium = false, IntroText = "bem vindo"})
+    local Window = OrionLib:MakeWindow({Name = "Lightz HUB | Legends Of Speed - beta", HidePremium = false, IntroText = "bem vindo"})
 
     -- Variáveis
     getgenv().AutoFarmOrb = true
