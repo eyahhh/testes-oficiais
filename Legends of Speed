@@ -1,6 +1,4 @@
-if game.PlaceId == 3101667897 then
-    -- Head
-    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
     
     -- Notificação
     OrionLib:MakeNotification({
@@ -13,10 +11,10 @@ if game.PlaceId == 3101667897 then
     wait(5)
     
     -- Janela
-    local Window = OrionLib:MakeWindow({Name = "Lightz HUB", HidePremium = false, IntroText = "bem vindo"})
+    local Window = OrionLib:MakeWindow({Name = "Lightz HUB | Legends Of Speed ()", HidePremium = false, IntroText = "bem vindo"})
 
     -- Variáveis
-    getgenv().AutoOrb = true
+    getgenv().AutoFarmOrb = true
     getgenv().AutoRebirth = true
     getgenv().AutoGem = true
     getgenv().AutoEgg = true
@@ -26,8 +24,8 @@ if game.PlaceId == 3101667897 then
     local Player = game:GetService("Players").LocalPlayer
 
     -- Funções
-    function AutoOrb()
-        while getgenv().AutoOrb == true do
+    function AutoFarmOrb()
+        while getgenv().AutoFarmOrb == true do
             game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
             game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
             game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
@@ -181,11 +179,11 @@ if game.PlaceId == 3101667897 then
 
     -- Toggles
     FarmTab:AddToggle({
-	    Name = "Auto Orb",
+	    Name = "Auto Farm Orb",
 	    Default = false,
 	    Callback = function(Value)
-		    getgenv().AutoOrb = Value
-		    AutoOrb()
+		    getgenv().AutoFarmOrb = Value
+		    AutoFarmOrb()
 	    end
     })
     
