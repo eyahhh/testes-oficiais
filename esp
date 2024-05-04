@@ -1,0 +1,107 @@
+ local plr = game.Players.LocalPlayer
+            local camera = game.Workspace.CurrentCamera
+
+            local function createDrawing()
+                local drawing = Drawing.new("Line")
+                drawing.Visible = false
+                drawing.Color = Color3.fromRGB(255, 0, 0)
+                drawing.Thickness = 2
+                drawing.Transparency = 1
+                return drawing
+            end
+
+            local espDrawings = {}
+
+            game.Players.PlayerAdded:Connect(function(newplr)
+                local top = createDrawing()
+                local bottom = createDrawing()
+                local left = createDrawing()
+                local right = createDrawing()
+
+                local function updateESP()
+                    while wait() do
+                        if newplr.Character and newplr.Character:FindFirstChild("HumanoidRootPart") and newplr.Name ~= plr.Name and newplr.Character.Humanoid.Health > 0 then
+                            local screenPos, onScreen = camera:WorldToViewportPoint(newplr.Character.HumanoidRootPart.Position)
+                            if onScreen then
+                                local scale = newplr.Character.Head.Size.Y / 2
+                                local size = Vector3.new(2, 3, 0) * (scale * 2)
+                                local humPos = camera:WorldToViewportPoint(newplr.Character.HumanoidRootPart.Position)
+                                local tl = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(size.X, size.Y, 0)).p)
+                                local tr = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-size.X, size.Y, 0)).p)
+                                local bl = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(size.X, -size.Y, 0)).p)
+                                local br = camera:WorldToViewportPoint((newplr.Character.HumanoidRootPart.CFrame * CFrame.new(-size.X, -size.Y, 0)).p)
+
+                                top.From = Vector2.new(tl.X, tl.Y)
+                                top.To = Vector2.new(tr.X, tr.Y)
+
+                                left.From = Vector2.new(tl.X, tl.Y)
+                                left.To = Vector2.new(bl.X, bl.Y)
+
+                                right.From = Vector2.new(tr.X, tr.Y)
+                                right.To = Vector2.new(br.X, br.Y)
+
+                                bottom.From = Vector2.new(bl.X, bl.Y)
+                                bottom.To = Vector2.new(br.X, br.Y)
+
+                                if newplr.TeamColor == plr.TeamColor then
+                                    top.Color = Color3.fromRGB(0, 255, 0)
+                                    left.Color = Color3.fromRGB(0, 255, 0)
+                                    bottom.Color = Color3.fromRGB(0, 255, 0)
+                                    right.Color = Color3.fromRGB(0, 255, 0)
+                                else
+                                    top.Color = Color3.fromRGB(255, 0, 0)
+                                    left.Color = Color3.fromRGB(255, 0, 0)
+                                    bottom.Color = Color3.fromRGB(255, 0, 0)
+                                    right.Color = Color3.fromRGB(255, 0, 0)
+                                end
+
+                                top.Visible = true
+                                left.Visible = true
+                                bottom.Visible = true
+                                right.Visible = true
+                            else
+                                top.Visible = false
+                                left.Visible = false
+                                bottom.Visible = false
+                                right.Visible = false
+                            end
+                        else
+                            top.Visible = false
+                            left.Visible = false
+                            bottom.Visible = false
+                            right.Visible = false
+                            if game.Players:FindFirstChild(newplr.Name) == nil then
+                                espDrawings[newplr] = nil
+                                break
+                            end
+                        end
+                    end
+                end
+
+                espDrawings[newplr] = {
+                    Top = top,
+                    Bottom = bottom,
+                    Left = left,
+                    Right = right,
+                    UpdateESP = updateESP
+                }
+
+                coroutine.wrap(updateESP)()
+            end)
+
+            game.Players.PlayerRemoving:Connect(function(removedPlayer)
+                if espDrawings[removedPlayer] then
+                    espDrawings[removedPlayer] = nil
+                end
+            end)
+        else
+            -- Se desativado, desativar o ESP
+            for _, drawings in pairs(espDrawings) do
+                drawings.Top.Visible = false
+                drawings.Bottom.Visible = false
+                drawings.Left.Visible = false
+                drawings.Right.Visible = false
+            end
+        end
+    end
+})
