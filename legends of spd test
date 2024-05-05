@@ -1,17 +1,17 @@
 if game.PlaceId == 3101667897 then
-    -- Head
+    -- Cabeçalho
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    
+
     -- Notificação
     OrionLib:MakeNotification({
         Name = "Lightz Hub Beta",
-        Content = "Seja bem vindo usuário ",
+        Content = "Seja bem-vindo usuário",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
-    
+
     wait(5)
-    
+
     -- Janela
     local Window = OrionLib:MakeWindow({Name = "Lightz Hub | Legends Of Speed", HidePremium = false, IntroText = "Lenda⚡"})
 
@@ -27,36 +27,39 @@ if game.PlaceId == 3101667897 then
 
     -- Funções
     function AutoOrb()
-        while getgenv().AutoOrb do
-            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
+        while getgenv().AutoOrb == true do
+            for i = 1, 20 do
+                game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Red Orb", "City")
+            end
             wait()
         end
     end
 
     function AutoGem()
-        while getgenv().AutoGem do
+        while getgenv().AutoGem == true do
             game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Gem", "City")
             wait()
         end
     end    
 
     function AutoRebirth()
-        while getgenv().AutoRebirth do
+        while getgenv().AutoRebirth == true do
             game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
             wait()
         end
     end
-    
+
     function BugPet()
-        while getgenv().BugPet do
-            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City")
-            wait(0.1)
+        while getgenv().BugPet == true do
+            for i = 1, 20 do
+                game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Yellow Orb", "City")
+            end
             game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
             wait(0.1)
         end
     end
 
-    -- Body
+    -- Corpo
     local FarmTab = Window:MakeTab({
         Name = "Auto Farm",
         Icon = "rbxassetid://4483345998",
@@ -81,37 +84,27 @@ if game.PlaceId == 3101667897 then
         PremiumOnly = false
     })
 
-    local PlayerSpeedTab = Window:MakeTab({
-        Name = "Player Speed",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-    })
-
     -- Toggles
     FarmTab:AddToggle({
         Name = "Auto Orb",
         Default = false,
         Callback = function(Value)
             getgenv().AutoOrb = Value
-            if Value then
-                for _ = 1, 20 do
-                    AutoOrb() -- Chama a função AutoOrb vinte vezes para aumentar a velocidade 20 vezes
-                end
-            end
+            AutoOrb()
         end
     })
-    
+
     FarmTab:AddToggle({
         Name = "Auto Hoop",
         Default = false,
         Callback = function(Value)
             getgenv().AutoHoop = Value
             spawn(function()
-                while getgenv().AutoHoop do
-                    for _, hoop in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
-                        firetouchinterest(hoop, Player.Character.HumanoidRootPart, 0)
+                while getgenv().AutoHoop == true do
+                    for i, v in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
+                        firetouchinterest(v, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 0)
                         wait()
-                        firetouchinterest(hoop, Player.Character.HumanoidRootPart, 1)
+                        firetouchinterest(v, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 1)
                     end
                 end
             end)    
@@ -123,9 +116,7 @@ if game.PlaceId == 3101667897 then
         Default = false,
         Callback = function(Value)
             getgenv().AutoGem = Value
-            if Value then
-                AutoGem()
-            end
+            AutoGem()
         end
     })
 
@@ -134,42 +125,41 @@ if game.PlaceId == 3101667897 then
         Default = false,
         Callback = function(Value)
             getgenv().AutoRebirth = Value
-            if Value then
-                AutoRebirth()
-            end    
+            AutoRebirth()
         end    
     })
-    
+
     EggTab:AddToggle({
         Name = "Auto Egg",
         Default = false,
         Callback = function(Value)
-            getgenv().AutoEgg = Value
-            if Value then
-                while getgenv().AutoEgg do
+            function Egg()
+                while getgenv().AutoEgg == true do
                     game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer("openCrystal", getgenv().Egg)
                     wait()
                 end
             end
+
+            getgenv().AutoEgg = Value
+            Egg()
         end
     })
-    
+
     EggTab:AddToggle({
         Name = "Bug Pet",
         Default = false,
         Callback = function(Value)
             getgenv().BugPet = Value
-            if Value then
-                BugPet()
-            end
+            BugPet()
         end    
     })
 
-    -- Buttons
+    -- Botões
     TeleportTab:AddButton({
         Name = "Highway Legends",
         Callback = function()
-            local char = Player.Character
+            local plr = Player
+            local char = plr.Character
             char.HumanoidRootPart.CFrame = CFrame.new(3682.60254, 71.5308151, 5592.50879, -0.0193620101, 3.62180188e-08, -0.999812543, 4.99353519e-08, 1, 3.52577771e-08, 0.999812543, -4.92433294e-08, -0.0193620101)
         end    
     })
@@ -177,7 +167,8 @@ if game.PlaceId == 3101667897 then
     TeleportTab:AddButton({
         Name = "Snow City",
         Callback = function()
-            local char = Player.Character
+            local plr = Player
+            local char = plr.Character
             char.HumanoidRootPart.CFrame = CFrame.new(-866.386841, 4.00088787, 2165.70654, -0.499959469, -9.93534854e-08, -0.866048813, -4.44803661e-08, 1, -8.90424445e-08, 0.866048813, -5.99544503e-09, -0.499959469)
         end    
     })
@@ -185,19 +176,13 @@ if game.PlaceId == 3101667897 then
     TeleportTab:AddButton({
         Name = "Magma City",
         Callback = function()
-            local char = Player.Character
-            char.HumanoidRootPart.CFrame = CFrame.new(1616.82739, 4.05089617, 4330.65283, 7.86637156e-06, -4.15036254e-08, -1, -6.3789912e-08, 1, -4.15041264e-08, 1, 6.37902389e-08, 7.86637156e-06)
+            local plr = Player
+            local char = plr.Character
+            char.HumanoidRootPart.CFrame = CFrame.new(1616.82739, 4.05089617, 4330.65283, 7.86637156e-06, -4.15036254e-08, -1, -6.3789912e-08, 1, -4.15041264e-08, 1, 6.37902389e-08, 7.86637156e
+                        end
         end    
     })
 
-    TeleportTab:AddButton({
-        Name = "City",
-        Callback = function()
-            local char = Player.Character
-            char.HumanoidRootPart.CFrame = CFrame.new(-537.767456, 3.95088959, 386.226837, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-        end    
-    })
-    
     -- Dropdowns
     EggTab:AddDropdown({
         Name = "Select Egg",
@@ -207,64 +192,72 @@ if game.PlaceId == 3101667897 then
             getgenv().Egg = Value
         end    
     })
-    
-    -- Função para criar o Speed
-    local function createSpeed()
-        local speedTextbox = PlayerSpeedTab:AddTextbox({
-            Name = "Speed",
-            Default = tostring(game.Players.LocalPlayer.Character.Humanoid.WalkSpeed), -- Define o valor padrão como a velocidade atual
-            Callback = function(Value)
-                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(Value) -- Altera a velocidade do jogador
-            end
-        })
-        
-        local resetSpeedButton = PlayerSpeedTab:AddButton({
-            Name = "Reset Speed",
-            Callback = function()
-                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16 -- Define a velocidade padrão
-                speedTextbox:SetValue("16") -- Atualiza o valor no textbox para refletir a velocidade padrão
-            end
-        })
-        
-        local speedLabel = PlayerSpeedTab:AddLabel({
-            Name = "Current Speed: " .. tostring(game.Players.LocalPlayer.Character.Humanoid.WalkSpeed) -- Mostra a velocidade atual do jogador
-        })
-        
-        game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-            speedLabel:SetText("Current Speed: " .. tostring(game.Players.LocalPlayer.Character.Humanoid.WalkSpeed)) -- Atualiza dinamicamente a label com a velocidade atual
-        end)
-    end
-    
-    createSpeed()
-
-    -- Função para criar a altura de pulo
-    local function createJumpHeight()
-        local jumpHeightTextbox = PlayerSpeedTab:AddTextbox({
-            Name = "Jump Height",
-            Default = tostring(game.Players.LocalPlayer.Character.Humanoid.JumpPower), -- Define o valor padrão como a altura de pulo atual
-            Callback = function(Value)
-                game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(Value) -- Altera a altura de pulo do jogador
-            end
-        })
-        
-        local resetJumpHeightButton = PlayerSpeedTab:AddButton({
-            Name = "Reset Jump Height",
-            Callback = function()
-                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50 -- Define a altura de pulo padrão
-                jumpHeightTextbox:SetValue("50") -- Atualiza o valor no textbox para refletir a altura de pulo padrão
-            end
-        })
-        
-        local jumpHeightLabel = PlayerSpeedTab:AddLabel({
-            Name = "Current Jump Height: " .. tostring(game.Players.LocalPlayer.Character.Humanoid.JumpPower) -- Mostra a altura de pulo atual do jogador
-        })
-        
-        game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
-            jumpHeightLabel:SetText("Current Jump Height: " .. tostring(game.Players.LocalPlayer.Character.Humanoid.JumpPower)) -- Atualiza dinamicamente a label com a altura de pulo atual
-        end)
-    end
-
-    createJumpHeight()
-
-    OrionLib:Init()
 end
+
+-- Tab "Player"
+local PlayerTab = Window:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Função para criar a Velocidade
+local function createSpeed()
+    local speedTextbox = PlayerTab:AddTextbox({
+        Name = "Speed",
+        Default = tostring(game.Players.LocalPlayer.Character.Humanoid.WalkSpeed), -- Define o valor padrão como a velocidade atual
+        Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(Value) -- Altera a velocidade do jogador
+        end
+    })
+    
+    local resetSpeedButton = PlayerTab:AddButton({
+        Name = "Reset Speed",
+        Callback = function()
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16 -- Define a velocidade padrão
+            speedTextbox:SetValue("16") -- Atualiza o valor no textbox para refletir a velocidade padrão
+        end
+    })
+    
+    local speedLabel = PlayerTab:AddLabel({
+        Name = "Current Speed: " .. tostring(game.Players.LocalPlayer.Character.Humanoid.WalkSpeed) -- Mostra a velocidade atual do jogador
+    })
+    
+    game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+        speedLabel:SetText("Current Speed: " .. tostring(game.Players.LocalPlayer.Character.Humanoid.WalkSpeed)) -- Atualiza dinamicamente a label com a velocidade atual
+    end)
+end
+
+createSpeed()
+
+-- Função para criar a Altura do Salto
+local function createJumpHeight()
+    local jumpHeightTextbox = PlayerTab:AddTextbox({
+        Name = "Jump Height",
+        Default = tostring(game.Players.LocalPlayer.Character.Humanoid.JumpPower), -- Define o valor padrão como a altura de pulo atual
+        Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(Value) -- Altera a altura de pulo do jogador
+        end
+    })
+    
+    local resetJumpHeightButton = PlayerTab:AddButton({
+        Name = "Reset Jump Height",
+        Callback = function()
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50 -- Define a altura de pulo padrão
+            jumpHeightTextbox:SetValue("50") -- Atualiza o valor no textbox para refletir a altura de pulo padrão
+        end
+    })
+    
+    local jumpHeightLabel = PlayerTab:AddLabel({
+        Name = "Current Jump Height: " .. tostring(game.Players.LocalPlayer.Character.Humanoid.JumpPower) -- Mostra a altura de pulo atual do jogador
+    })
+    
+    game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
+        jumpHeightLabel:SetText("Current Jump Height: " .. tostring(game.Players.LocalPlayer.Character.Humanoid.JumpPower)) -- Atualiza dinamicamente a label com a altura de pulo atual
+    end)
+end
+
+createJumpHeight()
+
+OrionLib:Init()
+
