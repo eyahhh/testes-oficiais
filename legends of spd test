@@ -81,6 +81,12 @@ if game.PlaceId == 3101667897 then
         PremiumOnly = false
     })
 
+    local PlayerSpeedTab = Window:MakeTab({
+        Name = "Player Speed",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
     -- Toggles
     FarmTab:AddToggle({
         Name = "Auto Orb",
