@@ -46,7 +46,7 @@ Rayfield:Notify({
 })
 
 local Button2 = Tab:CreateButton({
-   Name = "Auto Spam Op",
+   Name = "Auto S Parry test",
    Callback = function()
       getgenv().Paws = {
         ["AutoParry"] = true,
