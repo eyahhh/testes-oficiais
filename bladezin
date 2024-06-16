@@ -52,6 +52,20 @@ local Button2 = Tab:CreateButton({
      
 })
 
+local 1Toggle = Tab:CreateToggle({
+   Name = "AutoParry",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+  if Value then
+  --Red Circle Auto-Block:
+getgenv().visualizer = false
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))()
+  else
+  1Toggle:Set(false)
+   end,
+})
+
 local Button1 = Tab:CreateButton({
    Name = "Auto Parry Op",
    Callback = function()
