@@ -1,5 +1,6 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-
+Rayfield:LoadConfiguration()
+getgenv().SecureMode = true
 local Window = Rayfield:CreateWindow({
    Name = "Lightz Hub",
    LoadingTitle = "Lightz Hub",
@@ -11,10 +12,10 @@ local Window = Rayfield:CreateWindow({
    },
    Discord = {
       Enabled = true,
-      Invite = "xRBvtwHB",
+      Invite = "8S2bNRYd",
       RememberJoins = true
    },
-   KeySystem = true,
+   KeySystem = false,
    KeySettings = {
       Title = "please get your key!",
       Subtitle = "Key System",
@@ -48,62 +49,7 @@ Rayfield:Notify({
 local Button2 = Tab:CreateButton({
    Name = "Auto S Parry test",
    Callback = function()
-      getgenv().Paws = {
-        ["AutoParry"] = true,
-        ["PingBased"] = true,
-        ["PingBasedOffset"] = 0,
-        ["DistanceToParry"] = 0.6,
-        ["BallSpeedCheck"] = true,
-}
-
-local Players = game:GetService("Players")
-local Player = Players.LocalPlayer or Players.PlayerAdded:Wait()
-local ReplicatedPaw = game:GetService("ReplicatedStorage")
-
-local Paws = ReplicatedPaw:WaitForChild("Remotes", 9e9)
-local PawsBalls = workspace:WaitForChild("Balls", 9e9)
-local PawsTable = getgenv().Paws
-
-local function IsTheTarget()
-        return Player.Character:FindFirstChild("Highlight")
-end
-
-local function FindBall()
-    local RealBall
-    for i, v in pairs(PawsBalls:GetChildren()) do
-        if v:GetAttribute("realBall") == true then
-            RealBall = v
-        end
-    end
-    return RealBall
-end
-
-game:GetService("RunService").PreRender:connect(function()
-        if not FindBall() then 
-                return
-        end
-        local Ball = FindBall()
-        
-        local BallPosition = Ball.Position
-        
-        local BallVelocity = Ball.AssemblyLinearVelocity.Magnitude
-        
-        local Distance = Player:DistanceFromCharacter(BallPosition)
-        
-        local Ping = BallVelocity * (game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue() / 1000)
-        
-        if PawsTable.PingBased then
-        Distance -= Ping + PawsTable.PingBasedOffset
-        end
-        
-        if PawsTable.BallSpeedCheck and BallVelocity == 0 then return
-        end
-        
-        if (Distance / BallVelocity) <= PawsTable.DistanceToParry and IsTheTarget() and PawsTable.AutoParry then
-               Paws:WaitForChild("ParryButtonPress"):Fire()
-           end
-end)
-   end
+     
 })
 
 local Button1 = Tab:CreateButton({
@@ -173,5 +119,32 @@ local Button7 = ShopTab:CreateButton({
    end
 })
 
+
+local PlayerTab = Window:CreateTab("Player", 4483362458)
 -- Tornar a janela arrastável
+local Section = Tab:CreateSection("Status")
+local Slider = Tab:CreateSlider({
+   Name = "Speed",
+   Range = {0, 300},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+   end,
+})
+
+local Slider = Tab:CreateSlider({
+   Name = "Jump",
+   Range = {0, 300},
+   Increment = 1,
+   Suffix = "JumpPower",
+   CurrentValue = 50,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JUmpPower = Value
+   end,
+})
+local Section = Tab:CreateSection("Section Example")
 Window:SetDraggable(true)
